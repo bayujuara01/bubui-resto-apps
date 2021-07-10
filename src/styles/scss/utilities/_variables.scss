@@ -1,0 +1,41 @@
+/* BASE COLORS - 
+========================================================================== */
+$black-dark: rgb(34, 40, 49);
+$black-grey: rgb(85, 85, 85);
+$orange-dark: rgb(255, 103, 1);
+$orange-light: rgb(254, 168, 47);
+$orange-lightest: rgb(255, 194, 136);
+$white: rgb(238, 238, 238);
+
+$font-primary: $black-dark;
+$font-secondary: $black-grey;
+$font-light: $white;
+$font-grey: $black-grey;
+$orange-accent-primary: $orange-dark;
+$orange-accent-secondary: $orange-light;
+$orange-accent-light: $orange-lightest;
+$bg-light: $white;
+
+$shadow-border: rgb(220, 220, 220);
+$border-grey: $black-grey;
+
+/* BASE FONT - 
+========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* Font families. */
+$font-family-sans: 'Lato', sans-serif;
+
+/* Font size */
+$font-size-sm: 1rem;
+$font-size-md: 1rem;
+$font-size-lg: 1rem;
+$font-size-xl: 1rem;
+
+/* Line heights */
+$line-height-sm: 1.25;
+$line-height-md: 1.5;
+
+/* Letter spacings. */
+$letter-spacing-sm: 0.05em;
+$letter-spacing-md: 0.1em;

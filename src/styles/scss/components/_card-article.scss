@@ -1,0 +1,131 @@
+.resto-article {
+  // width: clamp(320px, 40%, 40%);
+  padding: 24px;
+
+  @include breakpoint('desktop') {
+    width: 50%;
+  }
+
+  @include breakpoint('desktop-lg') {
+  }
+}
+
+.resto__image {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.resto__card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include breakpoint('tablet') {
+    flex-wrap: nowrap;
+  }
+
+  @include breakpoint('desktop') {
+    flex-wrap: wrap;
+  }
+
+  @include breakpoint('desktop-lg') {
+    flex-wrap: nowrap;
+  }
+}
+
+.resto__img {
+  flex: 3 1 30ch;
+  height: calc(282px + 5vw);
+  overflow: hidden;
+
+  img {
+    max-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
+.resto__card {
+  border: 2px solid #f2f2f2;
+  border-radius: 8px;
+  overflow: hidden;
+
+  .resto__content {
+    padding: 16px 32px;
+    flex: 4 1 40ch;
+  }
+
+  .resto__tags {
+    margin: 0 -8px;
+  }
+
+  .tag {
+    display: inline-block;
+    margin: 8px;
+    font-size: 0.875em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: $orange-accent-primary;
+  }
+
+  .resto__name {
+    margin: 0;
+    font-size: clamp(1.4em, 2.1vw, 2.1em);
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .resto__data {
+    margin: 0;
+  }
+
+  .data__rating {
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    color: $orange-accent-primary;
+
+    span {
+      color: $font-grey;
+    }
+  }
+
+  .data__votes {
+    font-size: 0.825em;
+    font-style: italic;
+    color: var(--lightgrey);
+  }
+
+  .resto__desc {
+    text-overflow: ellipsis;
+
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .resto__save {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 6px 14px 6px 12px;
+    border-radius: 4px;
+    border: 2px solid $orange-accent-primary;
+    color: $orange-accent-primary;
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+    min-height: 44px;
+    min-width: 44px;
+
+    svg {
+      margin-right: 6px;
+    }
+  }
+}

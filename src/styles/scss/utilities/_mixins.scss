@@ -1,0 +1,41 @@
+
+$media_queries: (
+  "mobile": only screen and
+    (
+      min-width: 320px
+    ),
+  "only-mobile": screen and
+    (
+      max-width: 567px
+    ),
+  "tablet": screen and
+    (
+      min-width: 767px
+    ),
+  "only-tablet": screen and
+    (
+      max-width: 1023px
+    ),
+  "desktop": screen and
+    (
+      min-width: 1024px
+    ),
+  "desktop-lg": screen and
+    (
+      min-width: 1240px
+    )
+);
+
+@mixin breakpoint($breakpoints) {
+  $conditions: ();
+  @each $bp in $breakpoints {
+    $conditions: append(
+      $conditions,
+      #{inspect(map-get($media_queries, $bp))},comma
+    );
+  }
+
+  @media #{$conditions} {
+    @content;
+  }
+}
