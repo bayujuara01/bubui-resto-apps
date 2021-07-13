@@ -1,28 +1,35 @@
-
 $media_queries: (
-  "mobile": only screen and
+  'mobile': screen and
     (
-      min-width: 320px
+      min-width: 576px
     ),
-  "only-mobile": screen and
+  'only-mobile': screen and
     (
-      max-width: 567px
+      max-width: 576px
     ),
-  "tablet": screen and
+  'tablet': screen and
     (
-      min-width: 767px
+      min-width: 576px
     ),
-  "only-tablet": screen and
+  'tablet-horizontal': screen and
     (
-      max-width: 1023px
+      min-width: 768px
     ),
-  "desktop": screen and
+  'only-tablet': screen and
     (
-      min-width: 1024px
+      max-width: 768px
     ),
-  "desktop-lg": screen and
+  'desktop': screen and
+    (
+      min-width: 960px
+    ),
+  'desktop-lg': screen and
     (
       min-width: 1240px
+    ),
+  'mobile-desktop-y': screen and
+    (
+      min-height: 721px
     )
 );
 
@@ -31,7 +38,8 @@ $media_queries: (
   @each $bp in $breakpoints {
     $conditions: append(
       $conditions,
-      #{inspect(map-get($media_queries, $bp))},comma
+      #{inspect(map-get($media_queries, $bp))},
+      comma
     );
   }
 

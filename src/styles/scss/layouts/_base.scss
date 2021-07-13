@@ -1,0 +1,342 @@
+/* BASE LAYOUT 
+  ======================================= */
+.container {
+  max-width: 960px;
+  width: calc(100% - 2rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+
+  @include breakpoint('desktop') {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+
+  @include breakpoint('tablet') {
+    .change-theme {
+      position: initial;
+      margin-left: var(--mb-2);
+    }
+  }
+}
+
+/* BASE SECTION 
+  ======================================= */
+.section {
+  padding: 4rem 0 2rem;
+
+  &-title,
+  &-subtitle {
+    text-align: center;
+  }
+
+  &-title {
+    font-size: var(--h1-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-3);
+  }
+  &-subtitle {
+    display: block;
+    color: var(--first-color);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1);
+  }
+
+  @include breakpoint('tablet') {
+    .section {
+      padding-top: 8rem;
+    }
+  }
+}
+
+/* BASE NAV 
+  ======================================= */
+.nav {
+  max-width: 1024px;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    margin-bottom: var(--mb-2);
+  }
+  &__link,
+  &__logo,
+  &__toggle {
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+  }
+  &__logo {
+    &:hover {
+      color: var(--first-color);
+    }
+  }
+  &__link {
+    transition: 0.3s;
+
+    &:hover {
+      color: var(--first-color);
+    }
+  }
+
+  &__toggle {
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+
+  @include breakpoint('only-tablet') {
+    &__menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem 0 1rem;
+      text-align: center;
+      background-color: var(--body-color);
+      transition: 0.4s;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 0 0 1rem 1rem;
+      z-index: var(--z-fixed);
+    }
+  }
+
+  @include breakpoint('tablet-horizontal') {
+    height: calc(var(--header-height) + 1.5rem);
+
+    &__list {
+      display: flex;
+    }
+    &__item {
+      margin-left: var(--mb-5);
+      margin-bottom: 0;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+
+    &__toggle {
+      display: none;
+    }
+  }
+}
+
+/* BASE HOME
+  ======================================= */
+.home {
+  &__container {
+    height: calc(100vh - var(--header-height));
+    align-content: center;
+  }
+  &__title {
+    font-size: var(--biggest-font-size);
+    color: var(--primary-color);
+    margin-bottom: var(--mb-1);
+  }
+  &__subtitle {
+    font-size: var(--h1-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-4);
+  }
+  &__img {
+    width: 300px;
+    justify-self: center;
+  }
+
+  @include breakpoint('tablet') {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+
+    &__img {
+      width: 500px;
+    }
+  }
+}
+
+/* BASE ABOUT
+  ======================================= */
+.about {
+  &__data {
+    text-align: center;
+  }
+  &__description {
+    margin-bottom: var(--mb-3);
+  }
+  &__img {
+    width: 280px;
+    border-radius: 0.5rem;
+    justify-self: center;
+  }
+
+  @include breakpoint('tablet') {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+
+    &__data {
+      text-align: initial;
+    }
+
+    &__img {
+      width: 380px;
+      order: -1;
+    }
+  }
+}
+
+/* BASE SERVICES
+  ======================================= */
+.services {
+  &__container {
+    row-gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  &__content {
+    text-align: center;
+  }
+  &__img {
+    width: 64px;
+    height: 64px;
+    filter: invert(51%) sepia(95%) saturate(4543%) hue-rotate(132deg)
+      brightness(91%) contrast(95%);
+    margin-bottom: var(--mb-2);
+  }
+  &__title {
+    font-size: var(--h3-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-1);
+  }
+  &__description {
+    padding: 0 1.5rem;
+  }
+
+  @include breakpoint('tablet-horizontal') {
+    margin-top: var(--mb-6);
+  }
+}
+
+/* BASE MENU
+  ======================================= */
+.menu {
+  &__container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--container-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(3, 74, 40, 0.15);
+    padding: 0.75rem;
+  }
+  &__img {
+    width: 100px;
+    align-self: center;
+    margin-bottom: var(--mb-2);
+  }
+  &__name,
+  &__preci {
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+  }
+  &__name {
+    font-size: var(--normal-font-size);
+  }
+  &__detail,
+  &__preci {
+    font-size: var(--small-font-size);
+  }
+  &__detail {
+    margin-bottom: var(--mb-1);
+  }
+  &__button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    font-size: 1.25rem;
+    padding: 0.625rem 0.813rem;
+    border-radius: 0.5rem 0 0.5rem 0;
+  }
+
+  @include breakpoint('tablet-horizontal') {
+    &__container {
+      grid-template-columns: repeat(3, 210px);
+      column-gap: 4rem;
+      margin-top: var(--mb-6);
+    }
+    &__content {
+      padding: 1.5rem;
+    }
+    &__img {
+      width: 130px;
+    }
+  }
+}
+
+/* BASE APP
+  ======================================= */
+.app {
+  &__data {
+    text-align: center;
+  }
+  &__description {
+    margin-bottom: var(--mb-5);
+  }
+  &__stores {
+    margin-bottom: var(--mb-4);
+  }
+  &__store {
+    width: 120px;
+    margin: 0 var(--mb-1);
+  }
+  &__img {
+    width: 230px;
+    justify-self: center;
+  }
+
+  @include breakpoint('tablet') {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+    &__data {
+      text-align: initial;
+    }
+    &__img {
+      width: 380px;
+      order: -1;
+    }
+
+    @include breakpoint('only-tablet') {
+      &__store {
+        margin: 0 var(--mb-1) 0 0;
+      }
+    }
+
+    @include breakpoint('desktop') {
+      &__container {
+        column-gap: 7rem;
+      }
+    }
+  }
+}

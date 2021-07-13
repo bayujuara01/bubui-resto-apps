@@ -1,9 +1,7 @@
-@import 'scss/utilities/resets';
-@import 'scss/utilities/variables';
 @import 'scss/utilities/mixins';
+@import 'scss/utilities/variables';
 
-@import 'scss/layouts/header';
-@import 'scss/layouts/footer';
-@import 'scss/layouts/content';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-@import 'scss/components/card-article';
+@import 'scss/utilities/base';
+@import 'scss/layouts/base';
