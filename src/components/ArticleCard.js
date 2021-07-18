@@ -52,7 +52,9 @@ class ArticleCard extends HTMLElement {
           <span class="tag">${this._town}</span>
         </p>
         
-        <h1 class="resto__name"><a href="#">${this._title}</a></h1>
+        <h1 class="resto__name"><a href="#" class="resto__link">${
+          this._title
+        }</a></h1>
         <p class="resto__data">
           <span class="data__rating">${this.populateRatings(
             this._rating

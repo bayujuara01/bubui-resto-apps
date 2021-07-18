@@ -40,6 +40,8 @@
   align-items: center;
 
   @include breakpoint('only-mobile') {
+    // display: none;
+    visibility: hidden;
     position: fixed;
     left: -100%;
     top: 5rem;
@@ -47,11 +49,12 @@
     background-color: #fff;
     width: 100%;
     text-align: center;
-    transition: 0.3s;
+    transition: 0.3s all ease-in-out;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   }
 
   &.active {
+    visibility: visible;
     left: 0;
   }
 
@@ -61,6 +64,13 @@
 
     @include breakpoint('only-mobile') {
       margin: 1.8rem 0;
+      width: 100%;
+
+      .nav__link {
+        display: inline-block;
+        width: 100%;
+        padding: 10px 0;
+      }
     }
 
     .nav__link {

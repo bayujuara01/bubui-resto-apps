@@ -10,8 +10,13 @@ const navigationMenu = document.querySelector('.nav__menu');
 const articlesRestaurantsBody = document.querySelector('.resto-body');
 
 const mobileMenuToggle = (event) => {
-  btnNavigationMenu.classList.toggle('active');
   navigationMenu.classList.toggle('active');
+
+  for (let i = 0; i < navigationMenu.children.length; ++i) {
+    navigationMenu.children[i].addEventListener('click', (childrenEvent) => {
+      navigationMenu.classList.remove('active');
+    });
+  }
 };
 
 articlesRestaurantsBody.innerHTML = data.restaurants

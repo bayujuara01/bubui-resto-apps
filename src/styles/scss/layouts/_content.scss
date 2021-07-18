@@ -1,3 +1,10 @@
+.menu {
+  @include breakpoint('desktop-lg') {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
 .resto-body {
   display: flex;
   flex-wrap: wrap;

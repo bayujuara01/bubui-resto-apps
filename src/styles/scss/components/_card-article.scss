@@ -80,6 +80,7 @@
     a {
       text-decoration: none;
       color: inherit;
+      padding: 10px 0px;
     }
   }
 
@@ -105,9 +106,14 @@
 
   .resto__desc {
     text-overflow: ellipsis;
+    overflow: hidden;
 
-    margin-top: 1rem;
-    font-size: 1rem;
+    line-height: 25px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    padding-top: 15px;
+    font-size: 1.15rem;
   }
 
   .resto__save {
