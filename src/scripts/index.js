@@ -12,9 +12,19 @@ const articlesRestaurantsBody = document.querySelector('.resto-body');
 const mobileMenuToggle = (event) => {
   navigationMenu.classList.toggle('active');
 
+  if (navigationMenu.classList.contains('active')) {
+    btnNavigationMenu.setAttribute('aria-expanded', true);
+    btnNavigationMenu.setAttribute('aria-label', 'Close the menu');
+  } else {
+    btnNavigationMenu.setAttribute('aria-expanded', false);
+    btnNavigationMenu.setAttribute('aria-label', 'Open the menu');
+  }
+
   for (let i = 0; i < navigationMenu.children.length; ++i) {
     navigationMenu.children[i].addEventListener('click', (childrenEvent) => {
       navigationMenu.classList.remove('active');
+      btnNavigationMenu.setAttribute('aria-expanded', false);
+      btnNavigationMenu.setAttribute('aria-label', 'Open the menu');
     });
   }
 };
