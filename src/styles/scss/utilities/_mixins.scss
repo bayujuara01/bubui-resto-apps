@@ -1,26 +1,29 @@
-
 $media_queries: (
-  "mobile": only screen and
+  'mobile-xs': screen and
+    (
+      max-width: 320px
+    ),
+  'mobile': screen and
     (
       min-width: 320px
     ),
-  "only-mobile": screen and
+  'only-mobile': screen and
     (
       max-width: 567px
     ),
-  "tablet": screen and
+  'tablet': screen and
     (
       min-width: 767px
     ),
-  "only-tablet": screen and
+  'only-tablet': screen and
     (
       max-width: 1023px
     ),
-  "desktop": screen and
+  'desktop': screen and
     (
       min-width: 1024px
     ),
-  "desktop-lg": screen and
+  'desktop-lg': screen and
     (
       min-width: 1240px
     )
@@ -31,7 +34,8 @@ $media_queries: (
   @each $bp in $breakpoints {
     $conditions: append(
       $conditions,
-      #{inspect(map-get($media_queries, $bp))},comma
+      #{inspect(map-get($media_queries, $bp))},
+      comma
     );
   }
 
