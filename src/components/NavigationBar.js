@@ -4,7 +4,11 @@ class NavigationBar extends HTMLElement {
   }
 
   connectedCallback() {
-    this.render();
+    this.render().eventListener();
+  }
+  eventListener() {
+    this.addEventListener('click', this);
+    return this;
   }
 
   render() {
@@ -29,6 +33,8 @@ class NavigationBar extends HTMLElement {
         </div>
       </nav>
     `;
+
+    return this;
   }
 }
 

@@ -1,2 +1,8 @@
 # Depedency directories
 node_modules/
+
+# Build directories
+dist/
+
+# Others
+.prettierrc

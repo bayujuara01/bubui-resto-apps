@@ -112,6 +112,10 @@
       border-radius: 0 0 1rem 1rem;
       z-index: var(--z-fixed);
     }
+
+    .active {
+      top: 5%;
+    }
   }
 
   @include breakpoint('tablet-horizontal') {
