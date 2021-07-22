@@ -1,12 +1,25 @@
-import 'regenerator-runtime'; /* for async await transpile */
-import '../styles/main.scss';
+import 'regenerator-runtime' /* for async await transpile */
+import '../styles/main.scss'
+import App from './views/App'
+import serviceWorkerRegister from './utils/ServiceWorkerRegister'
 
-import * as data from '../DATA.json';
-import '../components/NavigationBar';
+// import * as data from '../DATA.json'
 
-const navigationToggle = document.querySelector('.nav__toggle');
-const navigationDrawer = document.querySelector('.nav__menu');
+const navigationButton = document.querySelector('.nav__button')
+const navigationDrawer = document.querySelector('.nav__menu')
+const content = document.querySelector('.main')
 
-navigationToggle.addEventListener('click', (event) => {
-  navigationDrawer.classList.toggle('active');
-});
+const app = new App({
+  navigationButton,
+  navigationDrawer,
+  content
+})
+
+window.addEventListener('hashchange', () => {
+  app.renderPage()
+})
+
+window.addEventListener('load', () => {
+  app.renderPage()
+  serviceWorkerRegister()
+})

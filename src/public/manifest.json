@@ -1,0 +1,47 @@
+{
+  "short_name": "Crown Resto",
+  "name": "Crown Restaurant",
+  "display": "standalone",
+  "start_url": "/index.html",
+  "description": "Free Catalogue Movie for you",
+  "icons": [
+    {
+      "src": "/icons/crown-logo-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/crown-logo-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/crown-logo-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/crown-logo-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/crown-logo-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/crown-logo-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#a040a0",
+  "background_color": "#EEEEEE"
+}
