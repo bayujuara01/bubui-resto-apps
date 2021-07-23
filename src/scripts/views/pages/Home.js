@@ -1,5 +1,5 @@
-import RestaurantSource from '../../scripts/data/restaurant-source'
-import API_ENDPOINT from '../../scripts/global/ApiEndpoint'
+import RestaurantSource from '../../data/restaurant-source'
+import API_ENDPOINT from '../../global/ApiEndpoint'
 
 const Home = {
   async render () {
@@ -8,12 +8,12 @@ const Home = {
     <section class="home" id="home">
       <div class="home__container container grid">
         <div class="home__data">
-          <h1 class="home__title">Tasty food</h1>
-          <h2 class="home__subtitle">Try the best food of <br> the week.</h2>
-          <a href="#" class="button">View Menu</a>
+          <h1 class="home__title">Crown Group</h1>
+          <h2 class="home__subtitle">Try the best food of <br> our Resto.</h2>
+          <!--<a href="#" class="home__button">View Menu</a>-->
         </div>
 
-        <img src="/images/home.png" alt="" class="home__img">
+        <img src="/images/hero-image_4.jpg" alt="" class="home__img">
       </div>
     </section>
 
@@ -25,7 +25,7 @@ const Home = {
           <h2 class="section-title about__initial">We cook the best <br> tasty food</h2>
           <p class="about__description">We cook the best food in the entire city, with excellent customer service, the
             best meals and at the best price, visit us.</p>
-          <a href="#" class="button">Explore history</a>
+          <a href="#" class="about__button">View Resto</a>
         </div>
 
         <img src="/images/about.jpg" alt="" class="about__img">
@@ -67,8 +67,6 @@ const Home = {
       <h2 class="section-title">Resto of the week</h2>
 
       <div class="resto__container grid"">
-    
-
         
     </section>
 
@@ -86,31 +84,13 @@ const Home = {
           <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
         </div>
       </div>
-    </section>
-
-    <!--===== APP =======-->
-    <section class="app section container">
-      <div class="app__container grid">
-        <div class="app__data">
-          <span class="section-subtitle app__initial">App</span>
-          <h2 class="section-title app__initial">App is aviable</h2>
-          <p class="app__description">Find our application and download it, you can make reservations, food orders, see
-            your deliveries on the way and much more.</p>
-          <div class="app__stores">
-            <a href="#"><img src="/images/app2.png" alt="" class="app__store"></a>
-            <a href="#"><img src="/images/app2.png" alt="" class="app__store"></a>
-          </div>
-        </div>
-
-        <img src="/images/movil-app.png" alt="" class="app__img">
-      </div>
     </section>`
   },
   async afterRender () {
     const restaurants = await RestaurantSource.getListAll()
     const restaurantContent = document.querySelector('.resto__container')
 
-    console.log(restaurants[0])
+    // console.log(restaurants[0])
 
     restaurants.forEach(restaurant => {
       restaurantContent.innerHTML +=
@@ -120,8 +100,8 @@ const Home = {
         <h3 class="resto__name">${restaurant.name}</h3>
         <span class="resto__detail">${restaurant.city}</span>
         <span class="resto__preci">👑 ${restaurant.rating}</span>
-        <a href="#" style="background-color: var(--primary-color); color: white" class="button resto__button"><i
-          class='bx bx-cart-alt'></i></a>
+        <a href="#/detail/${restaurant.id}" style="background-color: var(--primary-color); color: white" class="button resto__button"><i
+          class='bx bx-info-circle'></i></a>
       </div>
       `
     })

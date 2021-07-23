@@ -184,6 +184,13 @@
   &__img {
     width: 300px;
     justify-self: center;
+    border-radius: 10px;
+  }
+  &__button {
+    padding: 8px 8px;
+    border: 3px solid var(--primary-color-alt);
+    border-radius: 5px;
+    color: var(--primary-color);
   }
 
   @include breakpoint('tablet') {
@@ -211,6 +218,12 @@
     width: 280px;
     border-radius: 0.5rem;
     justify-self: center;
+  }
+  &__button {
+    padding: 8px 8px;
+    border: 3px solid var(--primary-color-alt);
+    border-radius: 5px;
+    color: var(--primary-color);
   }
 
   @include breakpoint('tablet') {
@@ -431,7 +444,27 @@
   }
 }
 
-/*========== FOOTER ==========*/
+/* BASE LIKE BUTTON
+  ======================================= */
+.like {
+  font-size: 18px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #db0000;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BASE FOOTER
+  ======================================= */
 .footer {
   &__container {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

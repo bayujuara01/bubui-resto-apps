@@ -31,7 +31,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/views/templates/index.html'),
+      template: path.resolve(__dirname, 'src/scripts/views/templates/index.html'),
       filename: 'index.html'
     }),
     new CopyWebpackPlugin({
