@@ -4,11 +4,20 @@ export const createDetailHeroTemplate = (restaurant) => `
   <div class="about__container  grid">
     <div class="about__data">
       <span class="section-subtitle about__initial">${restaurant.address},  ${restaurant.city}</span>
+      <p style="text-align: center; font-size: 24px">${
+        (() => {
+          let rates = ''
+          for (let i = 0; i < Math.round(restaurant.rating); ++i) {
+            rates += '👑 '
+          }
+          return rates
+        })()
+      }</p>
       <h2 class="section-title about__initial">${restaurant.name}</h2>
       <p class="about__description">${restaurant.description}</p>
       
     </div>
-
+    
     <img src="${API_ENDPOINT.GET_MEDIUM_IMAGE_RESTAURANT}/${restaurant.pictureId}" alt="${restaurant.name}'s picture" class="about__img">
   </div>`
 
